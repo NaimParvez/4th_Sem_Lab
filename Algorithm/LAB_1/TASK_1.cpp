@@ -84,8 +84,8 @@ int main()
   cout << "Enter your choice: ";
   int choice;
   cin >> choice;
-  string s = name[choice - 1];
-  ifstream in(s);
+  //string s = name[choice - 1];
+  ifstream in(name[choice - 1]);
   while (!in.eof())
   {
     in >> x;
@@ -95,7 +95,7 @@ int main()
   //   cout<<i<<endl;
   // }
   int find;
-  cout << "enter the number you are looking for: ";
+  cout << "Enter the number you are looking for: ";
   cin >> find;
   linear(find, vec);
   binary(find, vec);

@@ -15,12 +15,16 @@ using namespace std;
 class slove
 {
 public:
-    int n;
-    int a, b;
+    int n1,n2;
+    double a, b;
     int max_iterations = 100;
     double tol;
     vector<int> vec;
     string expres;
+//      slove(){
+//        n1=0;
+//        n2=0;
+//   }
 };
 class method : public slove
 {
@@ -75,23 +79,23 @@ void method::bisection()
     cout << "Enter the tolerance (e.g., 0.0002): ";
     cin >> tol;
     cout<<endl;
-    cout << "n\t  a\t\t  b\t\t  x\t\t  f(x)\t\t  Error" << endl;
-    cout << "--------------------------------------------------------" << endl;
+    cout << "n\t  a\t\t  b\t\t  x\t\t  f(x)\t\t       Error" << endl;
+    cout << "-----------------------------------------------------------------------------" << endl;
 
     // Bisection method
 
     double x_bisection, error_bisection;
-    for (int n = 1; n <= max_iterations; ++n)
+    for (int n1 = 1; n1 <= max_iterations; ++n1)
     {
         x_bisection = (a + b) / 2.0;
         error_bisection = fabs(b - a) / 2.0;
 
-        cout << n << "\t" << a << "\t\t" << b << "\t\t" << x_bisection << "\t\t" << fox(x_bisection) << "\t\t" << error_bisection << endl;
+        cout << n1 << "\t" << a << "\t\t" << b << "\t\t" << x_bisection << "\t\t" << method::fox(x_bisection) << "\t\t" << error_bisection << endl;
 
         if (error_bisection < tol)
             break;
 
-        if (fox(x_bisection) * fox(a) < 0)
+        if (method::fox(x_bisection) *method::fox(a) < 0)
             b = x_bisection;
         else
             a = x_bisection;
@@ -114,7 +118,7 @@ void method::f_position()
     cout << "--------------------------------------------------------" << endl;
 
     // False position method
-    double x_false_position = false_position(a, b, tol, max_iterations);
+    double x_false_position = method::false_position(a, b, tol, max_iterations);
 
     if (x_false_position != -1.0)
     {
@@ -129,6 +133,14 @@ void method::f_position()
 
 void method::compare()
 {
+    method::bisection();
+    method::f_position();
+    if(n1>n2){
+        cout<<"False position method is effective";
+    }
+    else{
+        cout<<"bisection method is more effective";
+    }
 }
 // void method::input_ex()
 // {
@@ -150,17 +162,17 @@ double method::false_position(double a, double b, double tol, int max_iterations
 {
     double x, error;
 
-    for (int n = 1; n <= max_iterations; ++n)
+    for (int n2 = 1; n2 <= max_iterations; ++n2)
     {
-        x = (a * fox(b) - b * fox(a)) / (fox(b) - fox(a));
+        x = (a * method::fox(b) - b * method::fox(a)) / (method::fox(b) - method::fox(a));
         error = fabs(x - a);
 
-        cout << n << "\t" << a << "\t\t" << b << "\t\t" << x << "\t\t" << fox(x) << "\t\t" << error << endl;
+        cout << n2 << "\t" << a << "\t\t" << b << "\t\t" << x << "\t\t" << fox(x) << "\t\t" << error << endl;
 
         if (error < tol)
             return x;
 
-        if (fox(x) * fox(a) < 0)
+        if (method::fox(x) * fox(a) < 0)
             b = x;
         else
             a = x;
