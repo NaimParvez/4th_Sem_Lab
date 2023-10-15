@@ -84,13 +84,14 @@ int main()
   cout << "Enter your choice: ";
   int choice;
   cin >> choice;
-  //string s = name[choice - 1];
-  ifstream in(name[choice - 1]);
+  string s = name[choice - 1];
+  ifstream in(s);
   while (!in.eof())
   {
     in >> x;
     vec.push_back(x);
   }
+  in.close();
   // for(auto i: vec){
   //   cout<<i<<endl;
   // }

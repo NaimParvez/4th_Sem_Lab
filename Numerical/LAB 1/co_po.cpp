@@ -11,14 +11,19 @@
 using namespace std;
 int main()
 {
-  srand(time(0));
-  fstream file;
-  //ofstream out;
-  file.open("search_4.txt");
-  for(int i=0;i<40000;i++)
-  {
-    file<<rand()%1000000<<endl;
-  }
-  
+    vector<pair<double,int>>co_power;
+    string ex;
+    cin>>ex;
+    vector<string> split;
+    int j=0;
+    for(int i=0;i<ex.size();i++)
+    {
+        if(ex[i]=='+'||ex[i]=='-'){
+            while(i!=j){
+                
+            }
+        }
+    }
+      
 return 0;
 }

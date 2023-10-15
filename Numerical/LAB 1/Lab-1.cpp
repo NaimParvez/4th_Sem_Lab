@@ -15,16 +15,16 @@ using namespace std;
 class slove
 {
 public:
-    int n1,n2;
+    int n1, n2;
     double a, b;
     int max_iterations = 100;
     double tol;
     vector<int> vec;
     string expres;
-//      slove(){
-//        n1=0;
-//        n2=0;
-//   }
+    //      slove(){
+    //        n1=0;
+    //        n2=0;
+    //   }
 };
 class method : public slove
 {
@@ -35,6 +35,8 @@ public:
     void compare();
     double fox(double x);
     double false_position(double a, double b, double tol, int max_iterations);
+    void com_bisec();
+    void com_false();
 };
 
 int main()
@@ -51,8 +53,14 @@ top:
     cout << "\t3.Compare two method" << endl;
     cout << "Enter your choice: ";
     int press;
-    cout<<endl;
     press = getch();
+    cout << endl;
+    cout << "Enter a: ";
+    cin >> a;
+    cout << "Enter b: ";
+    cin >> b;
+    cout << "Enter the tolerance (e.g., 0.0002): ";
+    cin >> tol;
     switch (press)
     {
     case 49:
@@ -64,7 +72,7 @@ top:
     case 51:
         method::compare();
     default:
-        cout << "select 1-3 ";
+        cout << "select 1-3 \n";
         goto top;
         break;
     }
@@ -72,13 +80,8 @@ top:
 
 void method::bisection()
 {
-    cout << "Enter a: ";
-    cin >> a;
-    cout << "Enter b: ";
-    cin >> b;
-    cout << "Enter the tolerance (e.g., 0.0002): ";
-    cin >> tol;
-    cout<<endl;
+
+    cout << endl;
     cout << "n\t  a\t\t  b\t\t  x\t\t  f(x)\t\t       Error" << endl;
     cout << "-----------------------------------------------------------------------------" << endl;
 
@@ -95,7 +98,7 @@ void method::bisection()
         if (error_bisection < tol)
             break;
 
-        if (method::fox(x_bisection) *method::fox(a) < 0)
+        if (method::fox(x_bisection) * method::fox(a) < 0)
             b = x_bisection;
         else
             a = x_bisection;
@@ -108,12 +111,7 @@ void method::bisection()
 
 void method::f_position()
 {
-    cout << "Enter a: ";
-    cin >> a;
-    cout << "Enter b: ";
-    cin >> b;
-    cout << "Enter the tolerance (e.g., 0.0002): ";
-    cin >> tol;
+
     cout << "n\t  a\t\t  b\t\t  x\t\t  f(x)\t\t  Error" << endl;
     cout << "--------------------------------------------------------" << endl;
 
@@ -135,11 +133,13 @@ void method::compare()
 {
     method::bisection();
     method::f_position();
-    if(n1>n2){
-        cout<<"False position method is effective";
+    if (n1 > n2)
+    {
+        cout << "False position method is effective";
     }
-    else{
-        cout<<"bisection method is more effective";
+    else
+    {
+        cout << "bisection method is more effective";
     }
 }
 // void method::input_ex()
@@ -180,3 +180,39 @@ double method::false_position(double a, double b, double tol, int max_iterations
 
     return -1.0; // Return -1 to indicate failure to converge
 }
+
+void method::com_bisec()
+{
+
+    // Bisection method
+    double x_bisection, error_bisection;
+    for (int i = 1; i <= max_iterations; ++i)
+    {
+        x_bisection = (a + b) / 2.0;
+        error_bisection = fabs(b - a) / 2.0;
+        if (error_bisection < tol)
+            n1 = i;
+        break;
+
+        if (method::fox(x_bisection) * method::fox(a) < 0)
+            b = x_bisection;
+        else
+            a = x_bisection;
+    }
+}
+
+void method::com_false()
+{
+
+    double x_false_position = method::false_position(a, b, tol, max_iterations);
+
+    if (x_false_position != -1.0)
+    {
+        cout << "Approximate root using false position: " << x_false_position << endl;
+    }
+    else
+    {
+        cout << "False position method did not converge within the maximum number of iterations." << endl;
+    }
+}
+
