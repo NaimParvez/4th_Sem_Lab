@@ -44,7 +44,7 @@ MAIN PROC
 
                       MOV AL, BH               ; Move 2nd digit to AL
                       CMP CL, AL               ; Compare with 3rd digit
-    ;JG  print_largest
+                                               ;JG  print_largest
 
                     ; 1st digit is the largest
                       JMP print_1st

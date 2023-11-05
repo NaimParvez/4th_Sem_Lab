@@ -19,12 +19,6 @@ using namespace chrono;
 
 void brute_force(vector<int> &vec)
 {
-
-    //  max:=min:=a[l];
-    // for i :=2 to n do
-    // {
-    // if (a[i]>max)thenmax:=a[i];
-    // }
     int min = vec[0];
     int max = vec[0];
 
@@ -32,16 +26,13 @@ void brute_force(vector<int> &vec)
     {
         if (vec[i] > max)
             max = vec[i];
-        else
+        if (vec[i] < min)
             min = vec[i];
     }
     cout << max << "\t\t" << min << "\t\t";
 }
-void recursion(vector<int> &vec)
+void recursion(vector<int> &vec, int start, int end, int &maxVal, int &minVal)
 {
-    int start = 0;
-    int end = vec.size();
-    int maxVal,minVal;
 
     if (start == end)
     {
@@ -71,25 +62,14 @@ void recursion(vector<int> &vec)
 
 int main()
 {
-    vector<string> name = {"1000", "2500", "5000", "7500", "10000", "12500", "15000", "17500", "20000"};
-    int vec[] = {1000, 2500, 5000, 7500, 10000, 12500, 15000, 17500, 20000};
-    vector<int> vec;
-    //   int x;
-    //   cout << "How many data you want to work with :" << endl;
-    //   cout << "\t\t1. 1000" << endl;
-    //   cout << "\t\t2. 2500" << endl;
-    //   cout << "\t\t3. 5000" << endl;
-    //   cout << "\t\t4. 7500" << endl;
-    //   cout << "\t\t5. 10000" << endl;
-    //   cout << "\t\t6. 12500" << endl;
-    //   cout << "\t\t7. 15000" << endl;
-    //   cout << "\t\t8. 17500" << endl;
-    //   cout << "\t\t9. 20000" << endl;
-    //   cout << "Enter your choice: ";
-    //   int choice;
-    //   cin >> choice;
 
-    cout << " no.of data \t\t max \t\t min \t\t Brute-force \t\t recursion method" << endl;
+
+    vector<string> name = {"1000", "2500", "5000", "7500", "10000", "12500", "15000", "17500", "20000"};
+    int arr[] = {1000, 2500, 5000, 7500, 10000, 12500, 15000, 17500, 20000};
+    vector<int> vec;
+    int maxVal, minVal;
+    cout << "No.of data \t max \t\t min\t\tBrute-force\t\trecursion method" << endl;
+    cout << "-----------------------------------------------------------------------------------------" << endl; 
     for (int i = 0; i < name.size(); i++)
     {
         int x;
@@ -101,19 +81,20 @@ int main()
             vec.push_back(x);
         }
         in.close();
-        cout << vec[i] << "\t\t";
-        auto start_time = high_resolution_clock::now();
+        cout << arr[i] << "\t\t";
+        auto start_time = std::chrono::high_resolution_clock::now();
         brute_force(vec);
-        auto end_time = high_resolution_clock::now();
-        auto duration = duration_cast<milliseconds>(end_time - start_time);
-        cout << duration.count() << " milliseconds\t\t";
+        auto end_time = std::chrono::high_resolution_clock::now();
+        auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
+        std::cout << duration.count() << " miliseconds" <<" \t\t";
+
 
         start_time = high_resolution_clock::now();
-        recursion(vec);
+        recursion(vec, 0, vec.size() - 1, maxVal, minVal);
         end_time = high_resolution_clock::now();
         duration = duration_cast<milliseconds>(end_time - start_time);
         cout << duration.count() << " milliseconds" << endl;
-
+        //cout << maxVal << "   " << minVal << endl;
         vec.clear();
     }
     return 0;
