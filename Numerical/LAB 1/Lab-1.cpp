@@ -113,7 +113,7 @@ void method::f_position()
 {
 
     cout << "n\t  a\t\t  b\t\t  x\t\t  f(x)\t\t  Error" << endl;
-    cout << "--------------------------------------------------------" << endl;
+    cout << "--------------------------------------------------------------------" << endl;
 
     // False position method
     double x_false_position = method::false_position(a, b, tol, max_iterations);

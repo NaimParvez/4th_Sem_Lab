@@ -110,7 +110,7 @@ int main()
 {
 
     vector<string> name = {"1000", "2500", "5000", "7500", "10000", "12500", "15000", "17500", "20000"};
-    int arr[] = {1000, 2500, 5000, 7500, 10000, 12500, 15000, 17500, 20000};
+    //int arr[] = {1000, 2500, 5000, 7500, 10000, 12500, 15000, 17500, 20000};
     vector<int> vec;
     cout<<"No. of data\t  merge sort       \tquick sort "<<endl;
     cout<<"-----------------------------------------------------------"<<endl;
@@ -126,7 +126,7 @@ int main()
         }
         in.close();
         int n = vec.size();
-        cout << arr[i] << "\t\t";
+        cout << name[i] << "\t\t";
         auto start_time = std::chrono::high_resolution_clock::now();
         mergeSort(vec, 0, n - 1);
         auto end_time = std::chrono::high_resolution_clock::now();
@@ -142,7 +142,5 @@ int main()
         // cout << maxVal << "   " << minVal << endl;
         vec.clear();
     }
-    return 0;
-
     return 0;
 }

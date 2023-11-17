@@ -1,16 +1,58 @@
-#include<bits/stdc++.h>
-#include<fstream>
-#define ll long long
-#define fr(m) for(int i=0; i<m; i++)
-#define fro(m) for(int i=1; i<m; i++)
-#define frj(m) for(int j=0; j<m; j++)
-#define frr(n) for(int i=n; i>=0; i--)
-#define frxy(x,y) for(int i=x;i<=y;i++)
-#define pb push_back
-#define pf push_front
+#include <iostream>
+#include <cmath>
 using namespace std;
-int main()
-{
-  
-return 0;
+
+double f(double x) {
+    return x * x - 4;
+}
+double df(double x) {
+    return 2 * x;
+}
+double iterationMethod(double initialGuess, double errorThreshold) {
+    double x = initialGuess;
+    double prev_x;
+    double error;
+    int i = 0;
+    do {
+        prev_x = x;
+        x = x - 0.1 * f(x);
+        error = abs(x - prev_x);
+        std::cout << "Iteration " << i+1 << ": " << x << ", Error: " << error << std::endl;
+        i++;
+    } while (error > errorThreshold);
+    cout << "\nRoot is-  "<< x << endl;
+    return x;
+}
+
+double newtonRaphsonMethod(double initialGuess, double errorThreshold) {
+    double x = initialGuess;
+    double prev_x;
+    double error;
+    int i = 0;
+    do {
+        prev_x = x;
+        x = x - f(x) / df(x);
+        error = abs(x - prev_x);
+        std::cout << "Iteration " << i+1 << ": " << x << ", Error: " << error << std::endl;
+        i++;
+    } while (error > errorThreshold);
+    cout << "\nRoot is-  "<< x << endl;
+    return x;
+}
+
+int main() {
+    double initialGuess = 1.8;
+    double errorThreshold;
+
+    cout << "Enter the error threshold: ";
+    cin >> errorThreshold;
+
+    std::cout << "Iteration Method Results: " << std::endl;
+    iterationMethod(initialGuess, errorThreshold);
+    std::cout << std::endl;
+
+    std::cout << "Newton-Raphson Method Results: " << std::endl;
+    newtonRaphsonMethod(initialGuess, errorThreshold);
+
+    return 0;
 }
