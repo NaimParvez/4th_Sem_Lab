@@ -1,3 +1,5 @@
+
+; take input 2 char and print in ascending order
 .MODEL SMALL
 .CODE
 MAIN PROC
