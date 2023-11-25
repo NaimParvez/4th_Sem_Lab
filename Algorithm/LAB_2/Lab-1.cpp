@@ -51,7 +51,7 @@ int main() {
 
     srand(time(0));
     vector<int> values;
-    vector<int> value_counts = {1000, 5000, 10000, 50000};
+    vector<int> value_counts = {1000, 5000, 10000, 15000,20000};
 
     for (int num_values : value_counts) {
         values.clear();
