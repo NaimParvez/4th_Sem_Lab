@@ -1,13 +1,237 @@
-\documentclass{article}
+% % \documentclass[11pt,a4paper]{article}
+% % \usepackage{ulem}
+% % \usepackage{color}
+% % \begin{document}
+% % 1. {\em Normal emphasized texts.}
+% % \ULforem % Redefining effects of {\em } and \emph{}.
+% % 2. {\em Underlined texts with line breaks.}
+% % 3. \emph{Yet underlined texts with line breaks.}
+% % 4. {\it{\em Underlined texts in italic fonts …}}
+% % 5. \textit{\emph{Yet underlined texts in …}}
+% % \normalem % For normal effects of {\em } and \emph{}.
+% % 6. {\em Returned to normal emphasized texts.}
+% % 7. The next phase is \uwave{wavy underlined.}
+% % 8. The next phase is \sout{striked out statement.}
+% % 9. The next phase is \xout{crossed out statement.}
 
+% % \noindent
+% % \texttt{atext} or {\tt atext}\\
+% % \textsf{atext} or {\sf atext}\\
+% % \textrm{atext} or {\rm\bf atext}\\{\bf atext}\\
+% % \textup{\it{atext}} or {\upshape atext}\\
+% % \underline{atext}\\
+% % \textsc{atext} or {\sc atext}\\
+% % \textsl{atext} or {\sl atext}\\
+% % \textmd{atext} or {\mdseries atext}\\
+% % \textbf{atext} or {\bfseries atext}\\
+% % \ULforem
+% % \emph{atext} or {\em atext}\\
+% % \definecolor{red}{rgb}{1,0,0}
+% % \textcolor{red}{atext}\\
+% % \textcolor{blue}{atext}\\
+% % \textcolor{green}{atext}\\
+% % \textcolor{cyan}{atext}\\
+% % \textcolor{magenta}{atext}\\
+% % \textcolor{yellow}{atext}\\
+% % \textcolor{black}{atext}\\
+% % %\textcolor{white}{atext}\\
+% % \textcolor{red}{\textbf{atext}}\\
+% % \textcolor{red}{\textit{atext}}\\
+% % there is a big \textcolor{red}{\bf atext}
+% % \end{document}
+% % \documentclass{article}
+% % \usepackage{color}
+% % \usepackage{hyperref}
+% % \begin{document}
+% % \noindent
+% % \underline{\bf LaTeX} is a macro package for typesetting documents. It
+% % is a language-based approach, where LaTeX instructions
+% % are interspersed with \textcolor{red}{the} text file of a document, say
+% % myfile.tex, for obtaining the desired output as
+% % myfile.dvi. The \underline{myfile.dvi} file can then be used to
+% % generate myfile.ps or myfile.pdf file.\\
+% % \section{Centre of gravity}{label:sec:cg}
+% % This is the point though which the resultant
+% % of the gravitational forces of all elemental
+% % weights of a body acts.
+% % \subsection{First subsection}
+% % This is the point though which the resultant
+% % of the gravitational forces of all elemental
+% % weights of a body acts.
+% % \par
+% % (1) There are certain key issues to attract
+% % investors, which need to be addressed.\ref{sec:cg}
+% % \begin{center}
+% %     \underline{\textbf{Ans the question!!}}
+% % \end{center}
+% % \begin{flushleft}
+% %     Question (1) is answered here.\\
+% %     Question (2) is answered here.
+% % \end{flushleft}
+% % \begin{center}
+% %     Question (3) is answered here.\\
+% %     Question (4) is answered here.
+% % \end{center}
+% % \noindent
+% % \paragraph{1. Paragraph} This is the first paragraph.
+% % \subparagraph{1.1 Sentence in Succeeding Paragraphs} This is the first sentence in succeeding paragraphs.
+
+% % \begin{sloppypar}naimish\end{sloppypar}
+% % \end{document}
+% % \documentclass{book}
+% % \begin{document}
+% % \chapter{\underline{First chapter}}
+% % \section{Centre of gravity}\label{sec:cg}
+% % This is the point though which the resultant
+% % of the gravitational forces of all elemental
+% % weights of a body acts.
+% % \subsection{\underline{First subsection}}
+% % This is the point though which the resultant
+% % of the gravitational forces of all elemental
+% % weights of a body acts.
+% % \subsubsection{First subsubsection}
+% % This is the point though which the resultant
+% % \par
+% % (1) There are certain key issues to attract
+% % investors, which need to be addressed.
+% % \chapter{Second chapter}
+% % \section{Centre of gravity}\label{sec:cg2}
+% % This is the point though which the resultant
+% % of the gravitational forces of all elemental
+% % weights of a body acts.
+% % \begin{center}
+% %     \LaTeX\ prints texts with both side aligned.
+% %     Center aligned texts can …
+% % \end{center}
+% % \end{document}
+% % \documentclass[12pt,a4paper,twoside]{book}
+% %  \usepackage{fancyheadings} % 
+% %  \pagestyle{fancy} 
+% %  \renewcommand{\chaptermark}[1]{\markboth{\thechapter. #1}{}}
+% % \renewcommand{\sectionmark}[1]{\markright{\thesection. #1}}
+% % \lhead[\textbf{\thepage}]{\textbf{\rightmark}} 
+% % \rhead[\textbf{\leftmark}]{\textbf{\thepage}} 
+% % \lfoot[\textbf{Engineering Mechanics}]{}
+% %  \rfoot[]{\textbf{Dilip Datta}}
+% %  \cfoot[]{}
+% %  \renewcommand{\headrulewidth}{0.15mm}
+% %  \renewcommand{\footrulewidth}{0.15mm}
+% %  \addtolength{\headwidth}{\marginparsep} \addtolength{\headwidth}{\marginparwidth}
+% %  %
+% % \begin{document}
+
+% % \chapter{Distributed Force System}
+% % \thispagestyle{empty}
+% % For simplifying an analysis, the force exerted by a body…
+% % …
+% % \section{Centre of Gravity} Since the weight of a body is a system of concurrent forces…
+% % …
+% % \begin{enumerate}
+% %     \item Question 1
+% %     \item Question 2
+% %     \item Question 3
+% %     \begin{enumerate}
+% %         \item Question 1
+% %          \begin{enumerate}
+% %             \item Question 1
+% %             \begin{enumerate}
+% %                 \item Question 1
+% %                 \item Question 2
+% %             \end{enumerate}
+% %             \item Question 2
+% %             \begin{enumerate}
+% %                 \item Question 1
+% %             \end{enumerate}
+% %         \end{enumerate}
+% %         \item Question 2
+% %     \end{enumerate}
+% %     \item Question 4
+% % \end{enumerate}
+% % \end{document}
+\documentclass[a4paper,11pt]{article}
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage{ulem}
+\usepackage{multicolrule}
+
+%
 \begin{document}
+\noindent
+\underline{\bf Lorem ipsum dolor sit amet}\vspace{4mm}
 
-Hello, World!
+elit ut aliquam purus. Purus gravida quis blandit turpis cursus. 
+Eu scelerisque felis imperdiet proin. 
+\xout{Sed risus ultricies tristique nulla} aliquet enim tortor at. 
+Proin sagittis nisl rhoncus mattis rhoncus urna neque viverra. 
+Adipiscing at in tellus integer feugiat.\\ 
 
-\LaTeX{} is fun.
+{\bf Tristique senectus et netus et:} malesuada fames ac turpis egestas.
+Cursus mattis \textcolor{red}{molestie} a iaculis at erat pellentesque adipiscing commodo. 
+Ac auctor augue mauris augue neque gravida.Nullam vehicula ipsum a arcu cursus. 
+Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin libero. 
+Id diam vel quam elementum. Maecenas pharetra convallis posuere morbi leo urna molestie at elementum. 
+Neque viverra justo nec ultrices dui sapien eget mi.
+\begin{itemize}
 
-This is a new paragraph of $(x + 1)(x - 2)$. The equation of the rectangle
-\[ A(x) = x^2 + 2x + 1 \]
-gives the area of the rectangle.
-
+\item Dolor sit amet consectetur adipiscing .
+\item labore et dolore magna aliqua.
+\item Urna nunc id cursus metus aliquam eleifend mi. 
+\end{itemize}
 \end{document}
+
+% \documentclass[twocolumn]{article}
+% \usepackage{multicol}
+% \columnseprule = 1mm
+% %
+% \begin{document}
+% The standard document-classes permit
+% to print a document either in a …
+% \end{document}
+% \documentclass[11pt,a4paper]{article}
+% \usepackage{enumerate}
+% %
+% \begin{document}
+% \begin{center}{\bf EXAMPLES}\end{center}
+% \begin{enumerate}[{\bf Ex{a}mple 1:}]
+% \item Show that…
+% \item Prove that…\label{item:ex_gr}
+% \item What would be…
+% \end{enumerate}
+% %
+% \begin{center}{\bf PROBLEMS}\end{center}
+% \begin{enumerate}[{\bf Problem (a):}]
+% \item Prove that…\label{item:pr_gr}
+% \item Show that…
+% \item What would be…
+% \end{enumerate}
+% %
+% The problem (\ref{item:pr_gr}) is just an
+% extension of the example \ref{item:ex_gr}.
+% \end{document}
+% \documentclass[a5paper, landscape]{book}
+% \usepackage[utf8]{inputenc}
+% \usepackage[T1]{fontenc}
+% \usepackage{geometry}
+% \usepackage{lipsum}
+% \usepackage{titlesec}
+
+% \geometry{
+%     paper=a5paper,
+%     top=2cm,
+%     bottom=2cm,
+%     left=3cm,
+%     right=3cm,
+%     includefoot
+% }
+% \pagenumbering{roman}
+
+% \begin{document}
+% \chapter{First Chapter}
+% \section{Section One}
+% \lipsum[1-2]
+
+% \chapter{Second Chapter}
+% \section{Section Two}
+% \lipsum[3-4]
+
+% \end{document}

@@ -1,0 +1,117 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+    MSG1 DB 'ENTER A DECIMAL NUMBER : $'
+    MSG2 DB 0DH,0AH,'IT IS NOT PRIME $'
+    MSG3 DB 0DH,0AH,'IT IS PRIME $'
+    NUM DW ?
+    STORE DW ?
+.CODE
+MAIN PROC
+    MOV AX,@DATA
+    MOV DS,AX
+    
+    LEA DX,MSG1
+    MOV AH,09H
+    INT 21H
+
+    CALL INDEC
+    PUSH AX   
+    
+    MOV NUM, AX
+    DEC AX
+    MOV CX,AX
+    MOV AX,NUM 
+    
+PRINT_LOOP:
+
+    CMP  CX,1
+    JE PRINT_PRIME
+    XOR DX,DX
+    MOV STORE,AX
+    DIV CX
+    MOV AX,STORE
+    CMP DX,0
+    JE  PRINT_NOT_PRIME
+    DEC CX 
+    JNE PRINT_LOOP
+
+PRINT_NOT_PRIME:
+    LEA DX,MSG2
+    MOV AH,09H
+    INT 21H
+    JMP EXIT
+
+PRINT_PRIME:
+    LEA DX,MSG3
+    MOV AH,09H
+    INT 21H
+    JMP EXIT
+    
+EXIT:
+    MOV AH, 4CH
+    INT 21H
+MAIN ENDP
+
+INDEC PROC
+    PUSH BX 
+    PUSH CX
+    PUSH DX
+@BEGIN :
+    
+    XOR BX,BX
+    XOR CX,CX
+    MOV AH,1
+    INT 21H
+    
+    CMP AL,'-'
+    JE  @MINUS
+    CMP AL,'+'
+    JE  @PLUS
+    JMP @REPEAT2
+    
+@MINUS: 
+    MOV CX,1 
+    
+@PLUS :
+    INT 21H
+    
+@REPEAT2:
+    CMP AL,'0'
+    JL  @NOT_DIGIT
+    CMP AL,'9'
+    JG  @NOT_DIGIT
+    
+    AND AX,000FH
+    PUSH AX
+    
+    MOV AX,10
+    MUL BX
+    POP BX
+    ADD BX,AX
+    
+    MOV AH, 1
+    INT 21H
+    CMP AL,0DH
+    JNE @REPEAT2
+    
+    MOV AX,BX
+    OR  CX,CX
+    JE  @EXIT
+    NEG AX
+    
+@EXIT:
+    POP DX
+    POP CX
+    POP BX
+    RET
+
+@NOT_DIGIT:
+    MOV AH,2
+    MOV DL,0DH
+    INT 21H
+    MOV DL,0AH
+    INT 21H
+    JMP @BEGIN
+INDEC ENDP  
+END MAIN

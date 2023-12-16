@@ -1,0 +1,232 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{dcolumn}
+
+\begin{document}
+%                     ------1-------
+
+\begin{table}[!hbt]
+    \centering
+    \caption{Obtained marks.}
+    \label{tab-marks}
+    \begin{tabular}{|l|c|c|c|c|}
+        \hline Name   & Math & Phy & Chem & English \\
+        \hline Robin  & 80   & 68  & 60   & 57      \\
+        \hline Julie  & 72   & 62  & 66   & 63      \\
+        \hline Robert & 75   & 70  & 71   & 69      \\
+        \hline
+    \end{tabular}
+\end{table}
+%              --------------2----------------
+\begin{table}[!hbt]
+    \centering
+    \caption{Scored points.}
+    \begin{tabularx}{0.8\linewidth}
+        {|X|c|>{\raggedleft\arraybackslash}X|}
+        \hline {\bf Name} & {\bf Sex} & {\bf Points} \\
+        \hline Milan      & M         & 1,500        \\
+        Julie             & F         & 1,325        \\
+        Sekhar            & M         & 922          \\
+        Dipen             & M         & 598          \\
+        Rubi              & F         & 99           \\
+        \hline
+    \end{tabularx}
+\end{table}
+%              --------------3----------------  
+\begin{table}[!hbt]
+    \centering
+    \caption{Obtained marks.}
+    \label{tab-marks}
+
+
+    \begin{tabular}{|l|c|c|c|}
+        \hline Name                           & \begin{sideways}Mathematics\,\end{sideways} &
+        \begin{sideways}Physics\end{sideways} &
+        \begin{sideways}Chemistry\end{sideways}                                                       \\
+        \hline Robin                          & 80                                          & 68 & 60 \\
+        \hline Julie                          & 72                                          & 62 & 66 \\
+        \hline Robert                         & 75                                          & 70 & 71 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+%              --------------4----------------
+
+\begin{table}[!hbt]
+    \centering
+    \caption{Obtained marks.}
+    \label{tab-marks}
+
+    \begin{tabular}{|l|*{5}{c|}}
+        \hline \multirow{2}{*}{Name} & \multicolumn{4}{c|}{Subjects} &
+        \multirow{2}{*}{Total}                                                                    \\
+        \cline{2-5}                  & Math                          & Phy & Chem & English &     \\
+        \hline
+        \hline Robin                 & 80                            & 68  & 60   & 57      & 265 \\
+        \hline Julie                 & 72                            & 62  & 66   & 63      & 263 \\
+        \hline Robert                & 75                            & 70  & 71   & 69      & 285 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+%              --------------5----------------
+
+\begin{wraptable}{r}{5cm}
+    \centering
+    \caption{Obtained marks.}
+    \label{wrap-table}
+    \begin{tabular}{|l|c|c|c|}
+        \hline Name   & Math & Phy & Chem \\
+        \hline Robin  & 80   & 68  & 60   \\
+        \hline Julie  & 72   & 62  & 66   \\
+        \hline Robert & 75   & 70  & 71   \\
+        \hline
+    \end{tabular}
+\end{wraptable}
+Marks obtained by … are shown in
+Table~\ref{wrap-table}.
+\lipsum[1]
+
+%              --------------6----------------
+
+\begin{table}[!hbt]
+    \centering
+    \caption{Obtained marks.}
+    \begin{tabularx}{\linewidth}{|l|X|c|}
+        \hline Semester                   & Subject-wise score & Total \\
+        \hline First                      & {
+                \begin{tabularx}{\linewidth}{X|c}
+                    English & 69 \\
+                    Science & 80 \\
+                    Drawing & 92
+                \end{tabularx}
+        }                                 & 241                        \\
+        \hline Second                     & {
+                \begin{tabularx}{\linewidth}{X|c}
+                    English     & 77 \\
+                    Science     & 85 \\
+                    Mathematics & 83 \\
+                    History     & 64
+                \end{tabularx}
+        }                                 & 309                        \\
+        \hline
+        \multicolumn{2}{|r|}{Grand Total} & 550                        \\
+        \hline
+    \end{tabularx}
+\end{table}
+
+%              --------------7----------------
+
+\begin{table}[!hbt]
+    \caption{Marks of 2015 and 2016.}
+    \begin{tabular}{|l|c|c|}
+        \hline Name   & Math & Phy \\
+        \hline Robin  & 80   & 68  \\
+        \hline Julie  & 72   & 62  \\
+        \hline Robert & 75   & 70  \\
+        \hline
+    \end{tabular}\hfill
+    %
+    \begin{tabular}{|l|c|c|}
+        \hline Name   & Math & Phy \\
+        \hline Robin  & 75   & 70  \\
+        \hline Julie  & 65   & 69  \\
+        \hline Robert & 78   & 67  \\
+        \hline
+    \end{tabular}
+\end{table}
+
+%              --------------(8-9)----------------
+
+\begin{table}[!hbt]
+    \begin{minipage}[c]{0.4\linewidth}
+        \centering
+        \caption{Marks of 2015.}
+        \label{1st_table}
+        \begin{tabular}{|l|c|c|}
+            \hline Name   & Math & Phy \\
+            \hline Robin  & 80   & 68  \\
+            \hline Julie  & 72   & 62  \\
+            \hline Robert & 75   & 70  \\
+            \hline
+        \end{tabular}
+    \end{minipage}\hfill
+    %
+    \begin{minipage}[c]{0.4\linewidth}
+        \centering
+        \caption{Marks of 2016.}
+        \label{2nd_table}
+        \begin{tabular}{|l|c|c|}
+            \hline Name   & Math & Phy \\
+            \hline Robin  & 75   & 70  \\
+            \hline Julie  & 65   & 69  \\
+            \hline Robert & 78   & 67  \\
+            \hline
+        \end{tabular}
+    \end{minipage}
+\end{table}
+
+%              --------------10----------------
+
+\begin{table}[!hbt]
+    \centering
+    \caption{Obtained marks.}
+    \begin{sideways}
+        \begin{tabular}{|l|*{4}{c|}}
+            \hline Name                        & \begin{sideways}Math\end{sideways} &
+            \begin{sideways}Phy\end{sideways}  &
+            \begin{sideways}Chem\end{sideways} &
+            \begin{sideways}English\end{sideways}                                                  \\
+            \hline Robin                       & 80                                 & 68 & 60 & 57 \\
+            \hline Julie                       & 72                                 & 62 & 66 & 63 \\
+            \hline Robert                      & 75                                 & 70 & 71 & 69 \\
+            \hline
+        \end{tabular}
+    \end{sideways}
+\end{table}
+
+%              --------------11----------------
+
+\begin{sidewaystable}
+    \centering
+    \caption{Marks obtained by three students in different subjects.}
+    \begin{tabular}{|*{7}{c|}}
+        \hline Name   & Physics & Mathematics & Chemistry & Biology & English & History \\
+        \hline Robin  & 80      & 68          & 60        & 75      & 70      & 71      \\
+        \hline Julie  & 72      & 62          & 66        & 80      & 68      & 60      \\
+        \hline Robert & 75      & 70          & 71        & 72      & 62      & 66      \\
+        \hline
+    \end{tabular}
+\end{sidewaystable}
+
+%              --------------12----------------
+
+\begin{table}[!hbt]
+    \centering
+    \caption{footnotes in table.}
+\begin{tabular}{|l|l|}
+    \hline Sonitpur\footnotemark & Tezpur    \\
+    Kamrup                       & Guwahati  \\
+    Dibrugarh                    & Dibrugarh \\
+    \hline
+\end{tabular}
+\footnotetext{Sonitpur is in Assam}
+%
+\begin{minipage}[t]{5cm}
+    \begin{tabular}{|l|l|}
+        \hline
+        Assam\footnote{Assam is in East}     & Dispur   \\
+        Tripura\footnote{It is also in East} & Agartala \\
+        Nagaland                             & Kohima   \\
+        \hline
+    \end{tabular}
+\end{minipage}
+\end{table}
+
+
+\end{document}
+

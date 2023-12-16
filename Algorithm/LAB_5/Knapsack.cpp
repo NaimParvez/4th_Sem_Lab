@@ -67,14 +67,14 @@ void maxweight(vector<int> &weight, vector<int> &profit, int n, int capacity)
         // if(current_weight==capacity)break;
 
         if (current_weight + v[i].second <= capacity)
-        { 
+        {
             cout << v[i].second << "  -  1" << endl;
-            current_weight += v[i].second; 
-            total_profit += v[i].first;    
+            current_weight += v[i].second;
+            total_profit += v[i].first;
         }
         else
         {
-            int remaining = capacity - current_weight; 
+            int remaining = capacity - current_weight;
             // cout<<remaining<<endl;
             // cout<<total_profit<<endl;
             // cout<<remaining<<endl;
@@ -146,39 +146,41 @@ void profitToweight(vector<int> &weight, vector<int> &profit, int n, int capacit
     }
     sort(v.begin(), v.end(), [](const pair<int, int> &a, const pair<int, int> &b)
          { return ((double)a.first / a.second) > ((double)b.first / b.second); });
-         cout<<"profit to weight ratio"<<endl;
-         cout<<"Weight- ";
+    cout << "profit to weight ratio" << endl;
+    cout << "Weight- ";
     for (auto i : v)
     {
-        cout <<i.second<<" ";
+        cout << i.second << " ";
     }
-    cout<<endl;
-    cout<<"Profit- ";
+    cout << endl;
+    cout << "Profit- ";
     for (auto i : v)
     {
-        cout <<i.first<<" ";
+        cout << i.first << " ";
     }
-    cout<<endl;
-    cout<<"ratio- ";
+    cout << endl;
+    cout << "ratio- ";
     for (auto i : v)
     {
-        cout<<(float)i.first/i.second <<" ";
+        cout << (float)i.first / i.second << " ";
     }
-    cout<<endl;
+    cout << endl;
     int current_weight = 0;
     double total_profit = 0.0;
-    cout << " element of Weight -" << endl;
-    int y=0;
+   // cout << " element of Weight " << endl;
+   cout<<"taking-";
+    int y = 0;
     for (int i = 0; i < n; i++)
     {
         // if(current_weight==capacity)break;
 
         if (current_weight + v[i].second <= capacity)
         { // if we can take the whole item
-            cout << v[i].second << "  -  1" << endl;
+           // cout << v[i].second << "  -  1" << endl;
+           cout<<" 1 ";
             current_weight += v[i].second; // take it
-            total_profit += v[i].first; 
-            y++;   // add its profit to the total profit
+            total_profit += v[i].first;
+            y++; // add its profit to the total profit
         }
         else
         {
@@ -191,30 +193,33 @@ void profitToweight(vector<int> &weight, vector<int> &profit, int n, int capacit
             // cout<<((float)remaining/v[i].second)<<endl;
             if (remaining == 0)
                 break;
-            cout << v[i].second << "  -  " << ((float)remaining / v[i].second) << endl;
+            // cout << v[i].second << "  -  " << ((float)remaining / v[i].second) << endl;
+            cout <<((float)remaining / v[i].second) <<" ";
             total_profit += v[i].first * ((float)remaining / v[i].second); // add its profit to the total profit
             // cout<<total_profit<<endl;
             break;
         }
     }
-    for (int i = y; i <n; i++)
+    for (int i = y; i < n; i++)
     {
-        cout<<v[i].second<<"- 0"<<endl;
+       // cout << v[i].second << "- 0" << endl;
+       cout<<" 0 ";
     }
-    
-    
-    cout << "solution : " << total_profit << endl
+
+    cout << "\nsolution : " << total_profit << endl
          << endl;
 }
 int main()
 {
     ifstream input("knapsack.txt");
-    int z=1;
-    cout<<endl<<endl;
+    int z = 1;
+    cout << endl
+         << endl;
     while (!input.eof())
     {
         int n, x;
-        cout<<"----------------"<<z++<<"-------------"<<endl<<endl;
+        cout << "----------------" << z++ << "-------------" << endl
+             << endl;
         input >> n;
         int capacity;
         input >> capacity;
@@ -231,20 +236,20 @@ int main()
             weight.pb(x);
             // items[i].ratio = (double)items[i].profit / items[i].weight;
         }
-        //input.close();
-        // vector<pair<int, int>> v;
-        // for (int i = 0; i < n; ++i) {
-        //     v.push_back(make_pair(profit[i], weight[i]));
-        // }
-        // sort(v.begin(), v.end(), greater<pair<int, int>>());
-        // for (auto i : v) {
-        // cout << i.first << " " << i.second << endl;}
-        cout << "Taking the elements in the order of profit" << endl;
-        maxProfit(weight, profit, n, capacity);
-        cout << "Taking the elements in the order of weight" << endl;
-        maxweight(weight, profit, n, capacity);
-        cout << "Taking the elements in the order of lesser weight" << endl;
-        lesserweight(weight, profit, n, capacity);
+        // input.close();
+        //  vector<pair<int, int>> v;
+        //  for (int i = 0; i < n; ++i) {
+        //      v.push_back(make_pair(profit[i], weight[i]));
+        //  }
+        //  sort(v.begin(), v.end(), greater<pair<int, int>>());
+        //  for (auto i : v) {
+        //  cout << i.first << " " << i.second << endl;}
+        // cout << "Taking the elements in the order of profit" << endl;
+        // maxProfit(weight, profit, n, capacity);
+        // cout << "Taking the elements in the order of weight" << endl;
+        // maxweight(weight, profit, n, capacity);
+        // cout << "Taking the elements in the order of lesser weight" << endl;
+        // lesserweight(weight, profit, n, capacity);
         cout << "Taking the elements in the order of profit to weight ratio" << endl;
         profitToweight(weight, profit, n, capacity);
         weight.clear();

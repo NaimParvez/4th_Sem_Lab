@@ -143,19 +143,29 @@ int main()
 {
     
 	//srand(time(0));
-    int x, y, N;
-    cout << "Enter numbers of data point to create: "; 
-	cin >> N;
-    iPair a[N];
-	Point points[N];
-    
-	for(int i = 0; i < N; i++) {
-		x = rand();
-		y = rand();
-		a[i] = {x, y};
-		points[i] = {x, y};
+    ;
+    //cout << "Enter numbers of data point to create: "; 
+	cout<<endl<<"fetching data from file..."<<endl;
+	//cin >> N;
+	ifstream input("points.txt");
+	vector<int> x;
+	vector<int> y;
+	while (!input.eof())
+	{
+		int a, b;
+		input >> a;
+		input >> b;
+		x.push_back(a);
+		y.push_back(b);
 	}
-	cout << N << " Points Created." << endl << endl;
+    int N = x.size();
+	iPair a[N];
+	Point points[N];
+	for(int i = 0; i < N; i++) {
+		a[i] = {x[i], y[i]};
+		points[i] = {x[i], y[i]};
+	}
+	cout << N << " Points Found..." << endl << endl;
 
     //ios_base::sync_with_stdio(false);
 

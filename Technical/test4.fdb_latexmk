@@ -1,0 +1,28 @@
+# Fdb version 4
+["pdflatex"] 1702371937 "c:/Users/ASUS/OneDrive/Documents/2-2 Labs/Technical/test4.tex" "test4.pdf" "test4" 1702371938 0
+  "C:/Users/ASUS/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1701238497 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
+  "C:/Users/ASUS/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1701096892 24141437 134334814e959e8f3fb74e61b4cbeff3 ""
+  "C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx10.tfm" 1136765053 1328 c834bbb027764024c09d3d2bf908b5f0 ""
+  "C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx12.tfm" 1136765053 1324 c910af8c371558dc20f2d7822f66fe64 ""
+  "C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmr12.tfm" 1136765053 1288 655e228510b4c2a1abe905c368440826 ""
+  "C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmr17.tfm" 1136765053 1292 296a67155bdbfc32aa9c636f21e91433 ""
+  "C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsl10.tfm" 1136765053 1508 efecb4a315fe0975509670a272d75ef5 ""
+  "C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1247596666 34811 78b52f49e893bcba91bd7581cdc144c0 ""
+  "C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
+  "C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247596667 35752 024fb6c41858982481f6968b5fc26508 ""
+  "C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb" 1247596666 35022 e40946b20bfdcd1099eafb2bcd9f25dd ""
+  "C:/Users/ASUS/AppData/Local/Programs/MiKTeX/tex/latex/base/bk10.clo" 1687174146 8288 867145ec5d6251846a7cd312df752b18 ""
+  "C:/Users/ASUS/AppData/Local/Programs/MiKTeX/tex/latex/base/book.cls" 1687174146 23268 4ef3f0c1d276578b68abf6a1d0e1b8ad ""
+  "C:/Users/ASUS/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-pdftex.def" 1681896761 29940 9473d58112bc8a88f5505b823a053dde ""
+  "C:/Users/ASUS/AppData/Local/Programs/MiKTeX/tex/latex/l3kernel/expl3.sty" 1693318691 6547 93cfd2d5e9d40d6ac03d44dd9b0face0 ""
+  "C:/Users/ASUS/AppData/Local/Programs/MiKTeX/tex/latex/l3packages/l3keys2e/l3keys2e.sty" 1693318928 4674 f8858208a18cf3115e892fb13f8b78db ""
+  "C:/Users/ASUS/AppData/Local/Programs/MiKTeX/tex/latex/lipsum/lipsum.ltd.tex" 1633253722 95525 6fd0552101a6b1f9b7a84b402ec435ba ""
+  "C:/Users/ASUS/AppData/Local/Programs/MiKTeX/tex/latex/lipsum/lipsum.sty" 1633253722 14690 c2c754218a7108db7823a4839c1bc3cd ""
+  "c:/Users/ASUS/OneDrive/Documents/2-2 Labs/Technical/test4.tex" 1702371937 906 aad511bd2a9a96a36e0ccf4018644a00 ""
+  "test4.aux" 1702371938 528 2792ecb8e91f88c91363dfd301946397 "pdflatex"
+  "test4.tex" 1702371937 906 aad511bd2a9a96a36e0ccf4018644a00 ""
+  (generated)
+  "test4.aux"
+  "test4.log"
+  "test4.pdf"
+  (rewritten before read)

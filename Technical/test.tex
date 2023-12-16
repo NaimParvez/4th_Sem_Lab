@@ -1,22 +1,84 @@
-\documentclass[]{article}
+\documentclass[a4paper]{book}
+
+\usepackage{hyperref}
+%\usepackage{boxedminipage}
+
 
 \begin{document}
-\noindent
-Hello, World!\\\LaTeX\ is fun.\\
-\noindent
-This is a new paragraph of $(x+1)(x-2)$.The equations of the rectangle
-$${A(x)=x^{23}+2x+1}$$gives the area of the rectangle.\\
+\chapter{First chapter}
+\section{Centre of gravity}\label{sec:cg}
+This is the point though which the resultant
+of the gravitational forces of all elemental
+weights of a body acts.
+\subsection{First subsection}
+This is the point though which the resultant
+of the gravitational forces of all elemental
+weights of a body acts.
+\par
+(1) There are certain key issues to attract
+investors, which need to be addressed.
+%
+\par \parindent = 8mm
+(2) There are certain key issues to attract
+investors, which need to be addressed.
+%
+\par \noindent \parskip 2mm
+(3) There are certain key issues to attract
+investors, which need to be addressed.
+\par
+(4) There are certain key issues to attract
+investors, which need to be addressed.
+%
+\paragraph{(5) Investing policies:}
+There are certain key issues to attract
+investors, which need to be addressed.
+%
+\subparagraph{(6) Investing policies:}
+There are certain key issues to attract
+investors, which need to be addressed.
+\section{Centre of mass}\label{sec-ex}
+The definition of the centre of gravity is
+given in Section\ref{sec:cg2} …
+\chapter{Second chapter}
+\section{Centre of gravity}\label{sec:cg2}
+This is the point though which the resultant
+of the gravitational forces of all elemental
+weights of a body acts.
+\begin{center}
+    \LaTeX\ prints texts with both side aligned.
+    Center aligned texts can …
+\end{center}
+\begin{flushright}
+    \LaTeX\ prints texts with both side aligned.
+    Right aligned texts can …
+\end{flushright}
+\begin{flushleft}
+    \LaTeX\ prints texts with both side aligned.
+    Left aligned texts can be produced through
+    the ‘flushleft’ environment.
+\end{flushleft}
+\begin{quotation}
+% \begin{spacing}{1.2}
+ \noindent
+Quoted statements are also printed with both side
+aligned, but in a narrowed width.
+\begin{flushright}
+{\it - Anonymous}
+\end{flushright}
+% \end{spacing}
+\end{quotation}{spacing}
+The ‘quotation’ environment is used for printing
+quoted \begin{sloppypar}statements\end{sloppypar} in a \textbf{`narrowed'} -- width.\\
+% \begin{boxedminipage}[t]{0.4\linewidth}
+%     This boxed-minipage is also …
+% \end{boxedminipage}
 
 
-$$\left(\frac{1}{2}\right)$$
-
-$$a_0,a_1,a_2,\ldots,a_{100}$$
-
-$$\sum_{i=1}^{100}a_i$$
-
-$$\int_{0}^{\infty}e^{-x^2}dx$$
-
-$$\int_{-\infty}^{\infty}e^{-x^2}dx$$
-
-$$\int_{-\infty}^{\infty}e^{-x^2}dx=\sqrt{\pi}$$
+Marks: 100 \hfill Time: 3 Hours
+\begin{flushright}
+    \textbf{[Maximum marks: 100]}
+\end{flushright}
+Both Rubi and Lila\footnote{They are sisters.} study
+in class I, while Ravi and Joy\footnote{They are
+friends.\label{fn:friends}} study in class II.
 \end{document}

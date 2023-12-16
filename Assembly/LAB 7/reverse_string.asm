@@ -1,0 +1,56 @@
+.MODEL SMALL
+.STACK 100H
+
+.DATA
+MSG1  DB "ENTER A MASSAGE: $"
+MSG2  DB 0AH, 0DH, "REVERSED: $"
+MSG3  DB 0AH, 0DH, "No. of vowel: $"
+
+.CODE
+MAIN PROC
+  MOV AX, @DATA
+  MOV DS, AX
+      
+  MOV AH, 9
+  LEA DX, MSG1
+  INT 21H
+  
+  XOR CX, CX
+INPUT:
+    MOV AH, 1
+    INT 21H
+    CMP AL, 0DH
+    JE END_INPUT 
+    XOR AH, AH
+    PUSH AX
+    INC CX
+    JMP INPUT
+END_INPUT:
+    MOV AH, 9
+    LEA DX, MSG2
+    INT 21H
+    
+    MOV BX, CX
+    MOV CX, 0
+    MOV DX, 0
+REVERSE:
+    POP AX
+    MOV DL, AL
+    MOV AH, 2
+    INT 21H
+    INC CX
+    CMP CX, BX
+    JNE REVERSE
+    
+    MOV AH, 9
+    LEA DX, MSG3
+    INT 21H
+    
+    MOV AH, 2
+    MOV DL, BL
+    INT 21H
+    
+    MOV AH, 4CH
+    INT 21H
+MAIN ENDP
+END MAIN
